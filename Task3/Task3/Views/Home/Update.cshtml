@@ -1,0 +1,17 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Update";
+}
+
+@Html.Partial("_UpdatePartial", Model)
+
+@Ajax.ActionLink("Поменять данные",
+    "Update",
+    "Home",
+    new { val = new Random().Next(-100, 100)},
+    new AjaxOptions()
+    {
+         UpdateTargetId = "container"
+    },
+    new { id = "container" })

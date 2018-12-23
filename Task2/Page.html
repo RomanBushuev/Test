@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+<link rel="stylesheet" href="Styles/styles.css" type="text/css" media="screen">
+<body>
+<form id="PersonalForm" >
+  <h1>Персональные данные</h1>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <p><input placeholder="Фамилия" name="lname" id="lname"></p>
+	<p><input placeholder="Имя" name="fname" id="fname"></p>    
+	<p><input placeholder="Отчество" name="mname" id="mname"></p>
+	<p>Дата рождения: <input type="date" name="birthday" value="2000-01-01" id="birthday">
+	<p><input type="radio" checked="checked" value="М" oninput="this.className = ''" name="radio" class="radio" id="ismale">Мужской</p>
+    <p><input type="radio" value="Ж" oninput="this.className = ''" name="radio" class="radio"  id="isfemale">Женский</p>
+  </div>
+  <div class="tab">
+    <p><input placeholder="Серия паспотра" type="number" min="0000" max="9999" name="pserial" id="pserial"></p>
+    <p><input placeholder="Номер паспорта" type="number" min="000000" max="999999"  name="pnumber" id="pnumber"></p>
+	<p>Дата выдачи: <input type="date" name="pdata" value="2000-01-01" id="pdate">
+	<p><input placeholder="Кем был выдан" name="pplace" id="pplace"></p>
+  </div>
+  <div class="tab">
+   <p><select name="education" oninput="this.className = ''" id="education">
+    <option selected value="Начальное">Начальное</option>
+    <option value="Среднее (общее)">Среднее (общее)</option>
+    <option value="Среднее (полное)">Среднее (полное)</option>
+    <option value="Среднее (профессиональное)">Среднее (профессиональное)</option>
+	<option value="Высшее">Высшее</option>
+   </select></p>
+   <p><select name="state" id="state">
+	  <option class="option" value="Не замужем/не женат">Не замужем/не женат</option>
+	  <option class="option" value="Разведен/разведена">Разведен/разведена</option>
+	  <option class="option" value="Замужем/женат">Замужем/женат</option>
+	  <option class="option" value="Сожительствую">Сожительствую</option>
+	</select></p>
+	<input type="checkbox" class="checkbox" id="hread" value="Читать книги" checked> Читать книги<br>
+	<input type="checkbox" class="checkbox" id="hsleep" value="Отсыпаться в выходные"> Отсыпаться в выходные<br>
+	<input type="checkbox" class="checkbox" id="heat" value="Есть пиццу"> Есть пиццу<br>
+	<input type="checkbox" class="checkbox" id="hplay" value="Играть в цивилизацию"> Играть в цивилизацию<br>
+  </div>
+  <div class="tab">
+	<p id="o_lname"></p>
+	<p id="o_fname"></p>
+	<p id="o_mname"></p>
+	<p id="o_birthday"></p>
+	<p id="o_sex"></p>
+	<p id="o_pserial"></p>
+	<p id="o_pnumber"></p>
+	<p id="o_pdate"></p>
+	<p id="o_pplace"></p>
+	<p id="o_education"></p>
+	<p id="o_state"></p>
+	<p id="o_hobbies"></p>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Назад</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Далее</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+
+<script type="text/javascript" src="JS/script.js"></script>
+
+</body>
+</html>

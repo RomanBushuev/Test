@@ -1,0 +1,25 @@
+﻿<div id="container"></div>
+@*
+    @Ajax.ActionLink("Поменять данные",
+        "Update",
+        "Home",
+        new { val = new Random().Next(-100, 100)},
+        new AjaxOptions()
+        {
+             UpdateTargetId = "container"
+        },
+        new { id = "update-container" })*@
+
+@using (Ajax.BeginForm("Update",
+    "Home",
+    new AjaxOptions
+    {
+        Url = @Url.Action("Update"),
+        HttpMethod = "POST",
+        UpdateTargetId = "container"
+    }))
+
+{
+    @Html.TextBox("val")
+    <input type="submit" value="Submit" />
+}
